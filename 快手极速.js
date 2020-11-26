@@ -26,10 +26,16 @@ function enterMyMainPage(){
     launchApp("快手极速版");
     tLog("快手极速版启动")
     sleep(5000);
+    var count = 0;
     while (true){
-        var random = Math.floor(Math.random() * 15001);
-        swipe(120, 1415, 320, 480, 490);
+        count += 1;
+        var random = Math.floor(Math.random() * 30001);
+        swipe(device.width/2, device.height - 300, 150, 200, 800);
         tLog("滑动屏幕");
-        sleep(random);
+        sleep(random + 5000);
+        if (count >= 100){
+            home();
+            exit();
+        }
     }
 }
