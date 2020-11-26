@@ -49,7 +49,7 @@ function enterMyMainPage(){
             tLog("非直播页面");
         }
         var random = 5000 + Math.floor(Math.random() * 25001);
-        log('滑动时间： ', Date());
+        tLog('滑动时间： ', Date());
         swipe(device.width / 2, 500, device.width / 2, device.height - 200, 700);
         sleep(random);
         if (count % 30 == 0){
@@ -68,7 +68,7 @@ function enterMyMainPage(){
                     }
                     tLog("关闭弹窗");
                     sleep(2500);
-                    if(className("android.widget.Button").text("立即签到").clickable(true).depth(17).exists()){
+                    if(className("android.widget.Button").text("立即签到").clickable(true).exists()){
                         tLog("立即签到");
                         sleep(1500);
                         className("android.view.View").text("看视频签到").findOne().click();
